@@ -10,4 +10,15 @@ public class Helloworld {
     public String helloworld() {
         return "helloworld";
     }
+
+    @RequestMapping("/helloworld")
+    public String helloworld2() {
+
+        String str = "hello world nice to meet you";
+        String[] s = str.split(" ");
+        for (int i = 0; i < s.length; i++) {
+            System.out.println("i = " + s[i]);
+        }
+        return "helloworld2";
+    }
 }
