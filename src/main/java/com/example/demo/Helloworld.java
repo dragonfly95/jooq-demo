@@ -3,6 +3,8 @@ package com.example.demo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,8 +16,12 @@ public class Helloworld {
 
 
     @RequestMapping("/data")
-    public MyData getData() {
+    public MyData getData(HttpServletRequest request, HttpServletResponse response) {
 
+        // 로그인
+        // userid, passowrd 빈값 인지 체크
+        // password 맞는 앉는지 체크
+        // 로그인 해야 볼 수 있는데 세션체크 
         String str = "hello world nice to meet you";
         String[] s = str.split(" ");
         List<String> strings = Arrays.asList(s);

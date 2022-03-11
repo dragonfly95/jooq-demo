@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.16.5.xsd"> <!-- JDBC connection parameters -->
+    <jdbc>
+        <driver>com.mysql.cj.jdbc.Driver</driver> <!-- ?serverTimezone=UTC&useSSL=false -->
+        <url>jdbc:mysql://localhost:3306/mydb</url>
+        <user>root</user>
+        <password>1q2w3e4r5t</password>
+        <properties>
+            <property>
+                <key>useSSL</key>
+                <value>false</value>
+            </property>
+            <property>
+                <key>verifyServerCertificate</key>
+                <value>false</value>
+            </property>
+            <property>
+                <key>serverTimezone</key>
+                <value>UTC</value>
+            </property>
+        </properties>
+    </jdbc> <!-- Generator parameters -->
+    <generator>
+        <name>org.jooq.codegen.JavaGenerator</name>
+        <strategy>
+            <name>org.jooq.codegen.example.JPrefixGeneratorStrategy</name>
+        </strategy>
+        <database>
+            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+            <includes>.*</includes>
+            <excludes></excludes> <!-- In case your database supports catalogs, e.g. SQL Server: <inputCatalog>public</inputCatalog> -->
+            <schemata>
+                <schema>
+                    <inputSchema>mydb</inputSchema>
+                </schema>
+            </schemata>
+            <unsignedTypes>false</unsignedTypes>
+            <tableValuedFunctions>true</tableValuedFunctions>
+        </database>
+        <target>
+            <packageName>com.example.demo.model</packageName>
+            <directory>target/generated-sources/jooq</directory>
+        </target>
+        <generate>
+            <indexes>true</indexes>
+            <relations>true</relations>
+            <javaTimeTypes>true</javaTimeTypes>
+            <springAnnotations>true
+            </springAnnotations> <!--<deprecated>true</deprecated>--> <!--<instanceFields>true</instanceFields>--> <!--<generatedAnnotation>true</generatedAnnotation>--> <!--<records>true</records>--> <!--<pojos>true</pojos>--> <!--<immutablePojos>false</immutablePojos>--> <!--<interfaces>false</interfaces>--> <!--<daos>true</daos>--> <!--<jpaAnnotations>true</jpaAnnotations>--> <!--<validationAnnotations>false</validationAnnotations>--> <!--<globalObjectReferences>true</globalObjectReferences>--> <!--<fluentSetters>true</fluentSetters>-->
+        </generate>
+    </generator>
+</configuration>
