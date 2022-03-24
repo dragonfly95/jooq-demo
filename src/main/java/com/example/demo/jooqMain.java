@@ -1,9 +1,13 @@
 package com.example.demo;
 
 import com.example.demo.model.tables.JIsMtTbl;
+import org.jooq.Configuration;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
+import org.jooq.impl.DefaultConfiguration;
+import org.simpleflatmapper.jooq.SfmRecordMapperProvider;
+import org.simpleflatmapper.jooq.SfmRecordMapperProviderFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
